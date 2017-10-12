@@ -10,6 +10,7 @@ import android.widget.ProgressBar;
 import android.widget.TabHost;
 import android.widget.Toast;
 
+import com.photo.example.silich.vladislav.geolocationofphotos.InputValidation;
 import com.photo.example.silich.vladislav.geolocationofphotos.R;
 
 public class AuthActivity extends AppCompatActivity implements View.OnClickListener,AuthView {
@@ -67,12 +68,10 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
     }
-
     @Override
     public void showLoading() {
         mProgressBar.setVisibility(View.VISIBLE);
     }
-
     @Override
     public void hideLoading() {
         mProgressBar.setVisibility(View.GONE);
@@ -82,14 +81,18 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
     public void openRepositoriesScreen() {
         Toast.makeText(this,"sadasda",Toast.LENGTH_LONG).show();
     }
-
     @Override
-    public void showLoginError() {
-
+    public void showErrorEmptyData() {
+        InputValidation.checkEmptyData(edtLoginIn.getText().toString(),edtPassIn.getText().toString(),this);
     }
 
     @Override
-    public void showPasswordError() {
+    public void showErrorPasswordEquals() {
+        InputValidation.checkPasswordEquals(edtLoginIn.getText().toString(),edtPassIn.getText().toString(),this);
+    }
 
+    @Override
+    public void showErrorLengthPass() {
+        InputValidation.checkLengthPass(edtLoginIn.getText().toString(),edtPassIn.getText().toString(),this);
     }
 }

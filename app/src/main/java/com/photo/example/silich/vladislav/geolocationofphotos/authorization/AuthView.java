@@ -9,8 +9,10 @@ import com.photo.example.silich.vladislav.geolocationofphotos.LoadingView;
 public interface AuthView  extends LoadingView{
     void openRepositoriesScreen();
 
-    void showLoginError();
+    void showErrorEmptyData();
 
-    void showPasswordError();
+    void showErrorPasswordEquals();
+
+    void showErrorLengthPass();
 
 }
