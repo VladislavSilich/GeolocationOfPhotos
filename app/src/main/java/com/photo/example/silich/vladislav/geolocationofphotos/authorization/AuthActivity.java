@@ -1,16 +1,23 @@
-package com.photo.example.silich.vladislav.geolocationofphotos;
+package com.photo.example.silich.vladislav.geolocationofphotos.authorization;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TabHost;
+import android.widget.Toast;
 
-public class AuthActivity extends AppCompatActivity {
+import com.photo.example.silich.vladislav.geolocationofphotos.R;
+
+public class AuthActivity extends AppCompatActivity implements View.OnClickListener,AuthView {
     TabHost tabHost;
     EditText edtLoginIn,edtLoginUp,edtPassIn,edtPassUp,edtRepPassUp;
     Button btnSignIn,btnSignUp;
+    ProgressBar mProgressBar;
+    AuthPresenter mAuthPresenter;
     private final String signIn = "Login";
     private final String signUp = "Register";
     @Override
@@ -19,7 +26,7 @@ public class AuthActivity extends AppCompatActivity {
         setContentView(R.layout.activity_auth);
         getSupportActionBar().hide();
 
-
+        mAuthPresenter = new AuthPresenter(this);
         edtLoginIn = (EditText)findViewById(R.id.edt_logSignIn);
         edtLoginUp = (EditText)findViewById(R.id.edt_loginSignUp);
         edtPassIn = (EditText)findViewById(R.id.edt_pasSignIn);
@@ -27,6 +34,7 @@ public class AuthActivity extends AppCompatActivity {
         edtRepPassUp = (EditText)findViewById(R.id.edt_repPasSignUp);
         btnSignIn = (Button)findViewById(R.id.btnSignIn);
         btnSignUp = (Button)findViewById(R.id.btnSignUp);
+        mProgressBar = (ProgressBar)findViewById(R.id.progressBar);
 
         tabHost = (TabHost)findViewById(R.id.tabHost);
         tabHost.setup();
@@ -48,6 +56,40 @@ public class AuthActivity extends AppCompatActivity {
         tabHost.getTabWidget().getChildAt(0).setBackgroundColor(Color.parseColor("#3DF53D"));
         tabHost.getTabWidget().getChildAt(1).setBackgroundColor(Color.parseColor("#3DF53D"));
 
+        btnSignIn.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btnSignIn:
+                mAuthPresenter.init();
+                break;
+        }
+    }
+
+    @Override
+    public void showLoading() {
+        mProgressBar.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void hideLoading() {
+        mProgressBar.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void openRepositoriesScreen() {
+        Toast.makeText(this,"sadasda",Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void showLoginError() {
+
+    }
+
+    @Override
+    public void showPasswordError() {
 
     }
 }

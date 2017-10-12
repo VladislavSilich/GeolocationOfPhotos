@@ -4,7 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.photo.example.silich.vladislav.geolocationofphotos.AuthActivity">
+    tools:context="com.photo.example.silich.vladislav.geolocationofphotos.authorization.AuthActivity">
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_gravity="center"/>
     <TabHost
         android:layout_width="match_parent"
         android:layout_height="match_parent"
