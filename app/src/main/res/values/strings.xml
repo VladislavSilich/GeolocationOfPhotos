@@ -5,4 +5,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="btn_log_in">log in</string>
+    <string name="edt_password">Password</string>
+    <string name="edt_login">Login</string>
+    <string name="btn_sign_up">SIGN UP</string>
+    <string name="edt_repeat_the_password">Repeat the password</string>
 </resources>
