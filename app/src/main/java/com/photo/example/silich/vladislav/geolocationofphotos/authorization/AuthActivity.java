@@ -10,7 +10,7 @@ import android.widget.ProgressBar;
 import android.widget.TabHost;
 import android.widget.Toast;
 
-import com.photo.example.silich.vladislav.geolocationofphotos.InputValidation;
+import com.photo.example.silich.vladislav.geolocationofphotos.utills.InputValidation;
 import com.photo.example.silich.vladislav.geolocationofphotos.R;
 
 public class AuthActivity extends AppCompatActivity implements View.OnClickListener,AuthView {

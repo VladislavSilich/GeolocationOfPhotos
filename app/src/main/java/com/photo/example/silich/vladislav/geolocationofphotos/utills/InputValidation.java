@@ -1,4 +1,4 @@
-package com.photo.example.silich.vladislav.geolocationofphotos;
+package com.photo.example.silich.vladislav.geolocationofphotos.utills;
 
 import android.content.Context;
 import android.widget.Toast;

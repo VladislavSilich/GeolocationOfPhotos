@@ -1,4 +1,4 @@
-package com.photo.example.silich.vladislav.geolocationofphotos;
+package com.photo.example.silich.vladislav.geolocationofphotos.photoView;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -13,7 +13,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class GeneralActivity extends AppCompatActivity
+import com.photo.example.silich.vladislav.geolocationofphotos.R;
+
+public class PhotoListActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
