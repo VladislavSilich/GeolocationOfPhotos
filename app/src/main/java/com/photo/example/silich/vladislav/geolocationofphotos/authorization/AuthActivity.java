@@ -1,5 +1,6 @@
 package com.photo.example.silich.vladislav.geolocationofphotos.authorization;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,10 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TabHost;
-import android.widget.Toast;
 
-import com.photo.example.silich.vladislav.geolocationofphotos.utills.InputValidation;
 import com.photo.example.silich.vladislav.geolocationofphotos.R;
+import com.photo.example.silich.vladislav.geolocationofphotos.photoView.PhotoListActivity;
+import com.photo.example.silich.vladislav.geolocationofphotos.utills.InputValidation;
 
 public class AuthActivity extends AppCompatActivity implements View.OnClickListener,AuthView {
     TabHost tabHost;
@@ -79,7 +80,8 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void openRepositoriesScreen() {
-        Toast.makeText(this,"sadasda",Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(this, PhotoListActivity.class);
+        startActivity(intent);
     }
     @Override
     public void showErrorEmptyData() {
